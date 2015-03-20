@@ -1,0 +1,12 @@
+<% profile = @graph.get_object("me") %>
+<div class="user-profile">
+  <h1> Here's your profile. </h1>
+  <%= image_tag "http://graph.facebook.com/#{profile['id']}/picture", class: "profile-image" %>
+  <h2> <%= profile["first_name"] %> <%= profile["last_name"] %> </h2>
+  <h3> Things you like: </h3>
+  <% likes_array = @graph.get_object("/me/likes") %>
+  <% likes_array.each do |like| %>
+    <%=  like["category"] %>
+  <% end %>
+  <%= @graph.get_object("me?fields=id,name,age_range,context,favorite_athletes,favorite_teams,devices") %>
+</div>  

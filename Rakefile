@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Mondaypickmeup::Application.load_tasks
+GoTribal::Application.load_tasks
